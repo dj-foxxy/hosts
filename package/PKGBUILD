@@ -1,0 +1,36 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# See http://wiki.archlinux.org/index.php/Python_Package_Guidelines for more
+# information on Python packaging.
+
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=hosts
+pkgver=0.0.1
+pkgrel=1
+pkgdesc=""
+arch=('any')
+url=""
+license=('GPL')
+groups=()
+depends=('python' 'python-pyparsing')
+makedepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=(!emptydirs)
+install=
+source=(hosts hosts-$pkgver.tar.gz)
+md5sums=(SKIP SKIP)
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  python setup.py install --root="$pkgdir/" --optimize=1
+
+  install -Dm755 "$srcdir/hosts" "$pkgdir/usr/bin/hosts"
+}
+
+# vim:set ts=2 sw=2 et:

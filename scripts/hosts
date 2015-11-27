@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+setopt ERR_EXIT
+setopt NO_UNSET
+setopt PIPE_FAIL
+
+readonly ROOT=$0:A:h:h
+PYTHONPATH=${PYTHONPATH:+$PYTHONPATH:}$ROOT exec python -m hosts $@
+

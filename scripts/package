@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+setopt ERR_EXIT
+setopt NO_UNSET
+setopt PIPE_FAIL
+
+readonly ROOT=$0:A:h:h
+
+cd $ROOT
+rm -fr dist
+python setup.py sdist
+cp -f dist/hosts-*.tar.gz package
+cd package
+rm -fr hosts-*.pkg.tar.xz(N) pkg src
+makepkg
+sudo pacman -U hosts-*.pkg.tar.xz
