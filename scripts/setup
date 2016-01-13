@@ -21,6 +21,7 @@ pacman_packages=(
   git
   python
   python-pyparsing
+  python-virtualenv
   zsh
 )
 
