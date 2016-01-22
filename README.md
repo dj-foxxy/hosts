@@ -1,21 +1,20 @@
 # Hosts
 
-Command line tool to manipulate /etc/hosts without buggering it up.
+Command line tool that manipulates /etc/hosts without buggering it up.
 
-Cleanly adds and removes host file entries, ensuring no duplicates.
 
 # Usage
 
-    # Add a line to the hosts file
-    sudo hosts -a "176.58.126.127 foxdogstudios.com"'
+    # Add a entry to your hosts file
+    sudo hosts -a '192.0.2.1 example.com'
 
-    # Remove a line
-    sudo hosts -r foxdogstudios.com
+    # Remove all enteries for example.com (as the canonical name)
+    sudo hosts -r example.com
 
 
 # Installation
 
-If you're on arch linux you can install the package
+Arch Linux user can install hosts as a package but running;
 
     ./scripts/package
 
